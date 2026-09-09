@@ -1096,6 +1096,319 @@
             contactForm.reset();
         });
 
+        /* ========================================
+   CHATBOT FUNCTIONALITY
+======================================== */
+
+const chatbotToggle = document.getElementById("chatbot-toggle");
+const chatbotWindow = document.getElementById("chatbot-window");
+const closeChatbot = document.getElementById("close-chatbot");
+const chatbotMessages = document.getElementById("chatbot-messages");
+const chatbotInput = document.getElementById("chatbot-input");
+const sendChatMessage = document.getElementById("send-chat-message");
+
+
+/* OPEN CHATBOT */
+
+chatbotToggle.addEventListener("click", function () {
+
+    chatbotWindow.classList.toggle("open");
+
+});
+
+
+/* CLOSE CHATBOT */
+
+closeChatbot.addEventListener("click", function () {
+
+    chatbotWindow.classList.remove("open");
+
+});
+
+
+/* CHATBOT KNOWLEDGE */
+
+const noelKnowledge = {
+
+    about: `Noel Ibrahim C. Nalam is a dedicated 4th-year Bachelor of Science in Information Technology (BSIT) student from Philippine Christian University. He is interested in IT support, system administration, troubleshooting, software maintenance, and web development.`,
+
+    education: `🎓 EDUCATION
+
+Philippine Christian University (PCU)
+
+Bachelor of Science in Information Technology (BSIT)
+
+Current Status: 4th Year Student
+
+Expected Graduation: 2nd Semester, SY 2026–2027.`,
+
+    skills: `💻 TECHNICAL SKILLS
+
+Technical Support:
+• OS Installation & Setup
+• System Restoration
+• Software Updates
+• Backup Management
+• Technical Troubleshooting
+
+Operating Systems:
+• Windows Server
+• Windows 10/11
+• Android
+
+Applications:
+• Microsoft Word
+• Microsoft Excel
+• Microsoft PowerPoint
+• Google Docs`,
+
+    experience: `🛠 EXPERIENCE
+
+Software Maintenance & System Administration Labs:
+
+• Configured user roles and permissions.
+• Managed user accounts in a simulated Windows Server environment.
+• Executed system recovery protocols.
+• Restored operating system functionality after simulated software crashes.
+• Managed OS updates and software patches.
+
+Academic Research & Documentation:
+
+• Co-authored research reports.
+• Edited technical documentation.
+• Organized data for IT projects.
+• Reviewed documents for consistency and errors.`,
+
+    achievements: `🏆 ACHIEVEMENTS
+
+• Certified National Member – Junior Philippine Computer Society (JPCS)
+
+• Dean's Lister during 2nd Year
+
+• Achieved a General Weighted Average (GWA) of 1.35`,
+
+    projects: `📂 NOEL'S PROJECTS
+
+Noel's portfolio currently includes:
+
+• Simple Calculator
+• Catch the Ball Game
+• Interactive To-Do List
+
+He has also worked on academic projects involving system administration, software maintenance, and technical documentation.`,
+
+    internship: `💼 INTERNSHIP GOAL
+
+Noel is seeking a 500-hour IT or Technical Support Internship.
+
+He wants to apply his skills in operating system administration, software configuration, backup and restoration, and technical troubleshooting.`
+};
+
+
+/* ADD MESSAGE */
+
+function addMessage(message, sender) {
+
+    const messageDiv = document.createElement("div");
+
+    messageDiv.className = "chat-message " + sender;
+
+    messageDiv.innerHTML = message.replace(/\n/g, "<br>");
+
+    chatbotMessages.appendChild(messageDiv);
+
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+
+}
+
+
+/* GET BOT RESPONSE */
+
+function getBotResponse(question) {
+
+    const q = question.toLowerCase();
+
+
+    if (
+        q.includes("hello") ||
+        q.includes("hi") ||
+        q.includes("who are you")
+    ) {
+
+        return `Hello! 👋 I am Noel's AI Portfolio Assistant.
+
+You can ask me about Noel's:
+
+• Education
+• Skills
+• Experience
+• Projects
+• Achievements
+• Internship goals`;
+
+    }
+
+
+    if (
+        q.includes("about") ||
+        q.includes("who is noel") ||
+        q.includes("tell me about noel")
+    ) {
+
+        return noelKnowledge.about;
+
+    }
+
+
+    if (
+        q.includes("education") ||
+        q.includes("school") ||
+        q.includes("university") ||
+        q.includes("college") ||
+        q.includes("bsit")
+    ) {
+
+        return noelKnowledge.education;
+
+    }
+
+
+    if (
+        q.includes("skill") ||
+        q.includes("technology") ||
+        q.includes("tools")
+    ) {
+
+        return noelKnowledge.skills;
+
+    }
+
+
+    if (
+        q.includes("experience") ||
+        q.includes("background") ||
+        q.includes("work")
+    ) {
+
+        return noelKnowledge.experience;
+
+    }
+
+
+    if (
+        q.includes("achievement") ||
+        q.includes("award") ||
+        q.includes("dean") ||
+        q.includes("certification") ||
+        q.includes("jpcs")
+    ) {
+
+        return noelKnowledge.achievements;
+
+    }
+
+
+    if (
+        q.includes("project") ||
+        q.includes("calculator") ||
+        q.includes("game") ||
+        q.includes("todo")
+    ) {
+
+        return noelKnowledge.projects;
+
+    }
+
+
+    if (
+        q.includes("internship") ||
+        q.includes("ojt") ||
+        q.includes("career") ||
+        q.includes("goal")
+    ) {
+
+        return noelKnowledge.internship;
+
+    }
+
+
+    return `I can help you learn about Noel. 😊
+
+Try asking:
+
+• What are Noel's skills?
+• What experience does Noel have?
+• Where did Noel study?
+• What are Noel's achievements?
+• What projects has Noel created?`;
+
+}
+
+
+/* SEND MESSAGE */
+
+function sendMessage() {
+
+    const userMessage = chatbotInput.value.trim();
+
+
+    if (userMessage === "") {
+
+        return;
+
+    }
+
+
+    addMessage(userMessage, "user-message");
+
+    chatbotInput.value = "";
+
+
+    setTimeout(function () {
+
+        const response = getBotResponse(userMessage);
+
+        addMessage(response, "bot-message");
+
+    }, 500);
+
+}
+
+
+/* SEND BUTTON */
+
+sendChatMessage.addEventListener("click", sendMessage);
+
+
+/* ENTER KEY */
+
+chatbotInput.addEventListener("keydown", function (event) {
+
+    if (event.key === "Enter") {
+
+        sendMessage();
+
+    }
+
+});
+
+
+/* SUGGESTION BUTTONS */
+
+document.querySelectorAll(".suggestion-btn").forEach(function (button) {
+
+    button.addEventListener("click", function () {
+
+        const question = button.textContent.trim();
+
+        chatbotInput.value = question;
+
+        sendMessage();
+
+    });
+
+});
+
     </script>
 </body>
 </html>
