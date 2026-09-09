@@ -547,6 +547,113 @@
         </div>
     </footer>
 
+<!-- =========================================
+     AI PORTFOLIO CHATBOT
+========================================= -->
+
+<!-- Floating Chat Button -->
+<button id="chatbot-toggle" aria-label="Open AI Assistant">
+    <i class="fas fa-robot"></i>
+</button>
+
+
+<!-- Chatbot Window -->
+<div id="chatbot-window">
+
+    <!-- Header -->
+    <div class="chatbot-header">
+
+        <div class="chatbot-header-info">
+
+            <div class="chatbot-avatar">
+                <i class="fas fa-robot"></i>
+            </div>
+
+            <div>
+                <h3>Noel's AI Assistant</h3>
+
+                <span class="chatbot-status">
+                    <span class="online-dot">●</span>
+                    Ask me about Noel
+                </span>
+            </div>
+
+        </div>
+
+        <button id="close-chatbot" aria-label="Close chatbot">
+            &times;
+        </button>
+
+    </div>
+
+
+    <!-- Messages -->
+    <div id="chatbot-messages">
+
+        <div class="chat-message bot-message">
+            👋 Hello! I'm Noel's AI Portfolio Assistant.<br><br>
+
+            You can ask me about Noel's:
+            <br>• Education
+            <br>• Skills
+            <br>• Experience
+            <br>• Projects
+            <br>• Achievements
+            <br>• Certifications
+        </div>
+
+    </div>
+
+
+    <!-- Suggested Questions -->
+
+    <div id="suggested-questions">
+
+        <button class="suggestion-btn">
+            Tell me about Noel
+        </button>
+
+        <button class="suggestion-btn">
+            What are his skills?
+        </button>
+
+        <button class="suggestion-btn">
+            What experience does he have?
+        </button>
+
+        <button class="suggestion-btn">
+            What is his education?
+        </button>
+
+        <button class="suggestion-btn">
+            What are his achievements?
+        </button>
+
+    </div>
+
+
+    <!-- Input -->
+
+    <div class="chatbot-input-container">
+
+        <input
+            type="text"
+            id="chatbot-input"
+            placeholder="Ask about Noel..."
+        >
+
+        <button id="send-chat-message">
+
+            <i class="fas fa-paper-plane"></i>
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- END AI CHATBOT -->
+    
     <div id="project-modal" class="modal">
         <div class="modal-content">
             <span class="close-button" id="close-modal-btn">&times;</span>
