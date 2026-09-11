@@ -628,7 +628,33 @@
         <button class="suggestion-btn">
             What are his achievements?
         </button>
+<button class="suggestion-btn">
+    What are Noel's hobbies?
+</button>
 
+<button class="suggestion-btn">
+    What are his interests?
+</button>
+
+<button class="suggestion-btn">
+    What are his strengths?
+</button>
+
+<button class="suggestion-btn">
+    What is his favorite subject?
+</button>
+
+<button class="suggestion-btn">
+    What is his dream job?
+</button>
+
+<button class="suggestion-btn">
+    What are his weaknesses?
+</button>
+
+<button class="suggestion-btn">
+    How can I contact Noel?
+</button>
     </div>
 
 
@@ -1224,6 +1250,53 @@ He wants to apply his knowledge and practical skills in:
 
 His goal is to gain real-world IT industry experience while contributing effectively to an IT team.`
 };
+            hobbies: `🎮 HOBBIES
+
+Noel enjoys playing Valorant during his free time.`,
+
+    interests: `📺 INTERESTS
+
+Noel enjoys watching series that are adapted from books.
+
+Some of the series he likes include:
+
+• Game of Thrones
+• House of the Dragon`,
+
+    strengths: `💪 STRENGTHS
+
+One of Noel's strengths is having a lot of patience.
+
+He believes patience helps him stay calm and continue working through challenges.`,
+
+    weaknesses: `🧠 AREAS FOR IMPROVEMENT
+
+One of Noel's weaknesses is overthinking.
+
+He is working on improving this by becoming more confident in his decisions and focusing on practical solutions.`,
+
+    dreamJob: `🎯 DREAM JOB
+
+Noel's dream job is to work in IT Support.
+
+He wants to help users solve technical problems, maintain systems, and provide reliable technical assistance.`,
+
+    favoriteSubject: `📚 FAVORITE SUBJECT
+
+Noel's favorite subject is ICT.
+
+He enjoys learning about technology and how it can be used to solve problems.`,
+
+    contact: `📩 CONTACT INFORMATION
+
+You can contact Noel through:
+
+📱 Phone: 09602589164
+
+📘 Facebook: Noel Ibrahim Nalam
+
+For professional inquiries, internship opportunities, or collaboration, visitors can also use the contact form on this portfolio website.`
+  };
 
 /* ADD MESSAGE */
 
@@ -1273,7 +1346,12 @@ You can ask me about Noel's:
 • Projects
 • Achievements
 • Certifications
-• Internship goals`;
+• Hobbies
+• Interests
+• Strengths
+• Weaknesses
+• Dream Job
+• Internship Goals`;
 
     }
 
@@ -1316,17 +1394,31 @@ You can ask me about Noel's:
 
 
     // ========================================
+    // FAVORITE SUBJECT
+    // ========================================
+
+    if (
+        q.includes("favorite subject") ||
+        q.includes("favourite subject") ||
+        q.includes("what subject") ||
+        q.includes("favorite class")
+    ) {
+
+        return noelKnowledge.favoriteSubject;
+
+    }
+
+
+    // ========================================
     // SKILLS
     // ========================================
 
     if (
         q.includes("skill") ||
         q.includes("skills") ||
-        q.includes("what are his skills") ||
-        q.includes("what are noel's skills") ||
         q.includes("technology") ||
         q.includes("tools") ||
-        q.includes("technical skills")
+        q.includes("technical")
     ) {
 
         return noelKnowledge.skills;
@@ -1340,10 +1432,8 @@ You can ask me about Noel's:
 
     if (
         q.includes("experience") ||
-        q.includes("what experience") ||
-        q.includes("work experience") ||
-        q.includes("technical experience") ||
-        q.includes("background")
+        q.includes("background") ||
+        q.includes("work experience")
     ) {
 
         return noelKnowledge.experience;
@@ -1356,15 +1446,11 @@ You can ask me about Noel's:
     // ========================================
 
     if (
-        q === "achievements" ||
         q.includes("achievement") ||
         q.includes("achievements") ||
-        q.includes("what are his achievements") ||
-        q.includes("what are noel's achievements") ||
         q.includes("award") ||
         q.includes("awards") ||
-        q.includes("dean's lister") ||
-        q.includes("deans lister") ||
+        q.includes("dean") ||
         q.includes("gwa")
     ) {
 
@@ -1398,7 +1484,6 @@ You can ask me about Noel's:
     if (
         q.includes("project") ||
         q.includes("projects") ||
-        q.includes("what projects") ||
         q.includes("calculator") ||
         q.includes("game") ||
         q.includes("catch the ball") ||
@@ -1412,18 +1497,104 @@ You can ask me about Noel's:
 
 
     // ========================================
+    // HOBBIES
+    // ========================================
+
+    if (
+        q.includes("hobby") ||
+        q.includes("hobbies") ||
+        q.includes("free time") ||
+        q.includes("what does noel do for fun") ||
+        q.includes("what does he do for fun") ||
+        q.includes("valorant")
+    ) {
+
+        return noelKnowledge.hobbies;
+
+    }
+
+
+    // ========================================
+    // INTERESTS
+    // ========================================
+
+    if (
+        q.includes("interest") ||
+        q.includes("interests") ||
+        q.includes("what does noel enjoy") ||
+        q.includes("what does he enjoy") ||
+        q.includes("favorite series") ||
+        q.includes("favourite series") ||
+        q.includes("game of thrones") ||
+        q.includes("house of the dragon") ||
+        q.includes("watching series")
+    ) {
+
+        return noelKnowledge.interests;
+
+    }
+
+
+    // ========================================
+    // STRENGTHS
+    // ========================================
+
+    if (
+        q.includes("strength") ||
+        q.includes("strengths") ||
+        q.includes("what is noel good at") ||
+        q.includes("what is he good at")
+    ) {
+
+        return noelKnowledge.strengths;
+
+    }
+
+
+    // ========================================
+    // WEAKNESSES
+    // ========================================
+
+    if (
+        q.includes("weakness") ||
+        q.includes("weaknesses") ||
+        q.includes("area for improvement") ||
+        q.includes("areas for improvement") ||
+        q.includes("what does noel need to improve")
+    ) {
+
+        return noelKnowledge.weaknesses;
+
+    }
+
+
+    // ========================================
+    // DREAM JOB
+    // ========================================
+
+    if (
+        q.includes("dream job") ||
+        q.includes("dream career") ||
+        q.includes("what job does noel want") ||
+        q.includes("what does noel want to become") ||
+        q.includes("it support")
+    ) {
+
+        return noelKnowledge.dreamJob;
+
+    }
+
+
+    // ========================================
     // INTERNSHIP GOALS
     // ========================================
 
     if (
-        q === "internship goals" ||
-        q === "internship goal" ||
         q.includes("internship goal") ||
         q.includes("internship") ||
         q.includes("ojt") ||
         q.includes("500 hour") ||
         q.includes("500-hour") ||
-        q.includes("career goal") ||
         q.includes("career objective")
     ) {
 
@@ -1433,17 +1604,20 @@ You can ask me about Noel's:
 
 
     // ========================================
-    // CAREER
+    // CONTACT INFORMATION
     // ========================================
 
     if (
-        q.includes("career") ||
-        q.includes("job") ||
-        q.includes("looking for work") ||
-        q.includes("looking for a job")
+        q.includes("contact") ||
+        q.includes("phone") ||
+        q.includes("number") ||
+        q.includes("facebook") ||
+        q.includes("how can i contact") ||
+        q.includes("how do i contact") ||
+        q.includes("reach noel")
     ) {
 
-        return noelKnowledge.internship;
+        return noelKnowledge.contact;
 
     }
 
@@ -1456,14 +1630,16 @@ You can ask me about Noel's:
 
 Try asking me:
 
-• Tell me about Noel
-• What are his skills?
-• What experience does he have?
+• What are Noel's hobbies?
+• What are his interests?
+• What are his strengths?
+• What is his favorite subject?
+• What is his dream job?
+• What are his weaknesses?
 • Where did Noel study?
+• What are his skills?
 • What are his achievements?
-• What certifications does he have?
-• What projects has he created?
-• Internship goals`;
+• What are his internship goals?`;
 
 }
 
