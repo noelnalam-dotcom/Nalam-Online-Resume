@@ -417,6 +417,67 @@
         bottom: 15px;
         width: 58px;
         height: 58px;
+
+        chatbot-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.clear-chat-btn {
+    border: none;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 8px;
+    margin-left: auto;
+    margin-right: 8px;
+    transition: 0.2s ease;
+}
+
+.clear-chat-btn:hover {
+    color: #ffb4b4;
+    transform: scale(1.15);
+}
+
+/* Chatbot window layout */
+.chatbot-window {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Chat messages must scroll */
+#chat-messages {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    padding: 20px;
+}
+
+/* Keep long answers inside the message bubble */
+#chat-messages .chatbot-message,
+#chat-messages .bot-message,
+#chat-messages .user-message {
+    max-width: 90%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    white-space: pre-line;
+}
+
+/* User messages stay on the right */
+#chat-messages .user-message {
+    margin-left: auto;
+}
+
+/* Bot messages stay on the left */
+#chat-messages .bot-message {
+    margin-right: auto;
+} 
+        
     }
 
 }
@@ -579,7 +640,9 @@
             </div>
 
         </div>
-
+        <button id="clear-chat-btn" class="clear-chat-btn" title="Clear chat">
+    <i class="fas fa-trash"></i>
+</button> 
         <button id="close-chatbot" aria-label="Close chatbot">
             &times;
         </button>
@@ -588,7 +651,7 @@
 
 
     <!-- Messages -->
-    <div id="chatbot-messages">
+    <div id="chatbot-messages"> <div id="chat-messages"> 
 
         <div class="chat-message bot-message">
             👋 Hello! I'm Noel's AI Portfolio Assistant.<br><br>
@@ -1540,6 +1603,50 @@ document.querySelectorAll(".suggestion-btn").forEach(function (button) {
 
 });
 
+        // ========================================
+// CHAT MESSAGE CONTAINER
+// ========================================
+
+const chatMessages = document.getElementById("chat-messages");
+
+
+// ========================================
+// SCROLL TO THE LATEST MESSAGE
+// ========================================
+
+function scrollChatToBottom() {
+    if (chatMessages) {
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+}
+
+
+// ========================================
+// CLEAR CHAT BUTTON
+// ========================================
+
+const clearChatButton = document.getElementById("clear-chat-btn");
+
+if (clearChatButton) {
+    clearChatButton.addEventListener("click", function () {
+        if (!chatMessages) return;
+
+        chatMessages.innerHTML = `
+            <div class="chatbot-message bot-message">
+                <p>
+                    Hello! 👋 I am Noel's AI Portfolio Assistant.
+                    <br><br>
+                    You can ask me about Noel's education, skills,
+                    experience, projects, achievements, hobbies,
+                    interests, strengths, weaknesses, dream job,
+                    internship goals, and contact information.
+                </p>
+            </div>
+        `;
+
+        scrollChatToBottom();
+    });
+} 
     </script>
 </body>
 </html>
