@@ -1155,148 +1155,52 @@ closeChatbot.addEventListener("click", function () {
 /* CHATBOT KNOWLEDGE */
 
 const noelKnowledge = {
+    about: `Noel Ibrahim C. Nalam is a 4th-year Bachelor of Science in Information Technology (BSIT) student from Philippine Christian University. He is interested in technology, programming, technical support, system administration, and troubleshooting.`,
 
-    about: `Noel Ibrahim C. Nalam is a dedicated 4th-year Bachelor of Science in Information Technology (BSIT) student from Philippine Christian University.`,
+    education: `Noel is studying at Philippine Christian University (PCU). He is taking Bachelor of Science in Information Technology (BSIT) and is currently a 4th-year student. His expected graduation is during the 2nd Semester of School Year 2026–2027.`,
 
+    favoriteSubject: `Noel's favorite subject is ICT because he enjoys learning about computers, technology, programming, and information systems.`,
 
-    education: `🎓 EDUCATION
+    skills: `Noel's technical skills include operating system installation and setup, system restoration, software updates, backup management, and technical troubleshooting.
 
-Philippine Christian University (PCU)
+He is familiar with Windows Server, Windows 10/11, and Android. He also uses Microsoft Word, Excel, PowerPoint, Google Docs, and system restore utilities.
 
-Bachelor of Science in Information Technology (BSIT)
+His soft skills include technical communication, problem-solving, teamwork, dedication, and adaptability.`,
 
-Current Status:
-4th Year Student
+    experience: `Noel has experience with software maintenance and system administration laboratory activities. He has configured user roles, permissions, and accounts in a simulated Windows Server environment.
 
-Expected Graduation:
-2nd Semester, SY 2026–2027`,
+He has also performed system recovery procedures, restored operating system functionality after simulated software crashes, and managed operating system updates and software patches.
 
+He also has experience co-authoring and editing research reports and technical documentation for IT group projects.`,
 
-    skills: `💻 TECHNICAL SKILLS
+    achievements: `Noel's achievements include being a Dean's Lister during his 2nd year, where he achieved a General Weighted Average (GWA) of 1.35.
 
-Technical Support:
-• OS Installation & Setup
-• System Restoration
-• Software Updates
-• Backup Management
-• Technical Troubleshooting
+He is also a Certified National Member of the Junior Philippine Computer Society (JPCS).`,
 
-Operating Systems:
-• Windows Server
-• Windows 10/11
-• Android
+    certifications: `Noel is a Certified National Member of the Junior Philippine Computer Society (JPCS).`,
 
-Applications & Tools:
-• Microsoft Word
-• Microsoft Excel
-• Microsoft PowerPoint
-• Google Docs`,
+    projects: `Noel's projects include a personal portfolio website, a simple calculator, a Catch the Ball game, an interactive To-Do List application, database projects, Java programming activities, and technical documentation projects.`,
 
+    hobbies: `Noel's hobbies include playing Valorant, watching anime, and watching House of the Dragon.`,
 
-    experience: `🛠 TECHNICAL EXPERIENCE
+    interests: `Noel is interested in technology, computers, programming, artificial intelligence, web development, system administration, technical support, troubleshooting, and fantasy series such as House of the Dragon.`,
 
-Software Maintenance & System Administration Labs:
+    strengths: `Noel's strengths include problem-solving, teamwork, dedication, adaptability, technical communication, and willingness to learn.`,
 
-• Configured user roles and permissions.
-• Managed accounts in a simulated Windows Server environment.
-• Executed system recovery protocols.
-• Restored OS functionality after simulated software crashes.
-• Managed operating system updates and software patches.
+    weaknesses: `Noel's areas for improvement include gaining more confidence when speaking, improving communication skills, and becoming more comfortable when presenting ideas.`,
 
-Academic Research & Technical Documentation:
+    dreamJob: `Noel's dream job is to become an IT Support Specialist or Systems Administrator.`,
 
-• Co-authored research reports.
-• Edited technical documentation.
-• Organized data for IT projects.`,
+    internship: `Noel is seeking a 500-hour IT or Technical Support Internship. He wants to gain practical experience in operating system administration, software configuration, system backup and restoration, and technical troubleshooting.`,
 
+    contact: `You can contact Noel Ibrahim C. Nalam through the following information:
 
-    achievements: `🏆 ACHIEVEMENTS
+📧 Email: nicnalam@gmail.com
+📱 Phone: (0966) 235-1454
+📍 Location: 1500 Taft Avenue, Ermita, Manila
 
-• Certified National Member – Junior Philippine Computer Society (JPCS)
-
-• Dean's Lister during 2nd Year
-
-• Achieved a General Weighted Average (GWA) of 1.35`,
-
-
-    certifications: `📜 CERTIFICATIONS & AFFILIATIONS
-
-• Certified National Member – Junior Philippine Computer Society (JPCS)
-
-Noel is also a Dean's Lister during his 2nd Year with a General Weighted Average (GWA) of 1.35.`,
-
-
-    projects: `📂 PROJECTS
-
-Noel's portfolio includes:
-
-• Simple Calculator
-• Catch the Ball Game
-• Interactive To-Do List
-
-He has also worked on academic projects involving system administration, software maintenance, and technical documentation.`,
-
-
-    internship: `💼 INTERNSHIP GOALS
-
-Noel is seeking a 500-hour IT or Technical Support Internship.
-
-He wants to apply his knowledge and practical skills in:
-
-• Operating System Administration
-• Software Configuration
-• System Backup and Restoration
-• Technical Troubleshooting
-
-His goal is to gain real-world IT industry experience while contributing effectively to an IT team.`
+You may also use the Contact section of this portfolio to send him a message.`
 };
-            hobbies: `🎮 HOBBIES
-
-Noel enjoys playing Valorant during his free time.`,
-
-    interests: `📺 INTERESTS
-
-Noel enjoys watching series that are adapted from books.
-
-Some of the series he likes include:
-
-• Game of Thrones
-• House of the Dragon`,
-
-    strengths: `💪 STRENGTHS
-
-One of Noel's strengths is having a lot of patience.
-
-He believes patience helps him stay calm and continue working through challenges.`,
-
-    weaknesses: `🧠 AREAS FOR IMPROVEMENT
-
-One of Noel's weaknesses is overthinking.
-
-He is working on improving this by becoming more confident in his decisions and focusing on practical solutions.`,
-
-    dreamJob: `🎯 DREAM JOB
-
-Noel's dream job is to work in IT Support.
-
-He wants to help users solve technical problems, maintain systems, and provide reliable technical assistance.`,
-
-    favoriteSubject: `📚 FAVORITE SUBJECT
-
-Noel's favorite subject is ICT.
-
-He enjoys learning about technology and how it can be used to solve problems.`,
-
-    contact: `📩 CONTACT INFORMATION
-
-You can contact Noel through:
-
-📱 Phone: 09602589164
-
-📘 Facebook: Noel Ibrahim Nalam
-
-For professional inquiries, internship opportunities, or collaboration, visitors can also use the contact form on this portfolio website.`
-  };
 
 /* ADD MESSAGE */
 
@@ -1318,14 +1222,9 @@ function addMessage(message, sender) {
 /* GET BOT RESPONSE */
 
 function getBotResponse(question) {
-
     const q = question.toLowerCase().trim();
 
-
-    // ========================================
     // GREETING
-    // ========================================
-
     if (
         q === "hi" ||
         q === "hello" ||
@@ -1335,7 +1234,6 @@ function getBotResponse(question) {
         q === "good evening" ||
         q.includes("who are you")
     ) {
-
         return `Hello! 👋 I am Noel's AI Portfolio Assistant.
 
 You can ask me about Noel's:
@@ -1351,31 +1249,22 @@ You can ask me about Noel's:
 • Strengths
 • Weaknesses
 • Dream Job
-• Internship Goals`;
-
+• Internship Goals
+• Contact Information`;
     }
 
-
-    // ========================================
     // ABOUT NOEL
-    // ========================================
-
     if (
         q.includes("about noel") ||
         q.includes("who is noel") ||
         q.includes("tell me about noel") ||
-        q.includes("introduce noel")
+        q.includes("introduce noel") ||
+        q.includes("tell me about him")
     ) {
-
         return noelKnowledge.about;
-
     }
 
-
-    // ========================================
     // EDUCATION
-    // ========================================
-
     if (
         q.includes("education") ||
         q.includes("where did noel study") ||
@@ -1385,139 +1274,105 @@ You can ask me about Noel's:
         q.includes("university") ||
         q.includes("college") ||
         q.includes("bsit") ||
-        q.includes("degree")
+        q.includes("degree") ||
+        q.includes("course") ||
+        q.includes("graduation")
     ) {
-
         return noelKnowledge.education;
-
     }
 
-
-    // ========================================
     // FAVORITE SUBJECT
-    // ========================================
-
     if (
         q.includes("favorite subject") ||
         q.includes("favourite subject") ||
         q.includes("what subject") ||
-        q.includes("favorite class")
+        q.includes("favorite class") ||
+        q.includes("favourite class")
     ) {
-
         return noelKnowledge.favoriteSubject;
-
     }
 
-
-    // ========================================
     // SKILLS
-    // ========================================
-
     if (
         q.includes("skill") ||
-        q.includes("skills") ||
         q.includes("technology") ||
+        q.includes("technologies") ||
         q.includes("tools") ||
-        q.includes("technical")
+        q.includes("technical") ||
+        q.includes("programming") ||
+        q.includes("coding") ||
+        q.includes("what can noel do")
     ) {
-
         return noelKnowledge.skills;
-
     }
 
-
-    // ========================================
     // EXPERIENCE
-    // ========================================
-
     if (
         q.includes("experience") ||
         q.includes("background") ||
-        q.includes("work experience")
+        q.includes("work experience") ||
+        q.includes("technical experience") ||
+        q.includes("laboratory")
     ) {
-
         return noelKnowledge.experience;
-
     }
 
-
-    // ========================================
     // ACHIEVEMENTS
-    // ========================================
-
     if (
         q.includes("achievement") ||
         q.includes("achievements") ||
         q.includes("award") ||
         q.includes("awards") ||
         q.includes("dean") ||
-        q.includes("gwa")
+        q.includes("dean's lister") ||
+        q.includes("gwa") ||
+        q.includes("general weighted average")
     ) {
-
         return noelKnowledge.achievements;
-
     }
 
-
-    // ========================================
     // CERTIFICATIONS
-    // ========================================
-
     if (
         q.includes("certification") ||
         q.includes("certifications") ||
         q.includes("certificate") ||
         q.includes("certificates") ||
         q.includes("jpcs") ||
-        q.includes("certified")
+        q.includes("certified") ||
+        q.includes("membership")
     ) {
-
-        return noelKnowledge.certifications || noelKnowledge.achievements;
-
+        return noelKnowledge.certifications;
     }
 
-
-    // ========================================
     // PROJECTS
-    // ========================================
-
     if (
         q.includes("project") ||
         q.includes("projects") ||
         q.includes("calculator") ||
         q.includes("game") ||
         q.includes("catch the ball") ||
+        q.includes("catch the star") ||
         q.includes("todo") ||
-        q.includes("to-do")
+        q.includes("to-do") ||
+        q.includes("portfolio website")
     ) {
-
         return noelKnowledge.projects;
-
     }
 
-
-    // ========================================
     // HOBBIES
-    // ========================================
-
     if (
         q.includes("hobby") ||
         q.includes("hobbies") ||
         q.includes("free time") ||
         q.includes("what does noel do for fun") ||
         q.includes("what does he do for fun") ||
-        q.includes("valorant")
+        q.includes("valorant") ||
+        q.includes("anime")
     ) {
-
         return noelKnowledge.hobbies;
-
     }
 
-
-    // ========================================
     // INTERESTS
-    // ========================================
-
     if (
         q.includes("interest") ||
         q.includes("interests") ||
@@ -1527,34 +1382,23 @@ You can ask me about Noel's:
         q.includes("favourite series") ||
         q.includes("game of thrones") ||
         q.includes("house of the dragon") ||
-        q.includes("watching series")
+        q.includes("watching series") ||
+        q.includes("fantasy series")
     ) {
-
         return noelKnowledge.interests;
-
     }
 
-
-    // ========================================
     // STRENGTHS
-    // ========================================
-
     if (
         q.includes("strength") ||
         q.includes("strengths") ||
         q.includes("what is noel good at") ||
         q.includes("what is he good at")
     ) {
-
         return noelKnowledge.strengths;
-
     }
 
-
-    // ========================================
     // WEAKNESSES
-    // ========================================
-
     if (
         q.includes("weakness") ||
         q.includes("weaknesses") ||
@@ -1562,87 +1406,76 @@ You can ask me about Noel's:
         q.includes("areas for improvement") ||
         q.includes("what does noel need to improve")
     ) {
-
         return noelKnowledge.weaknesses;
-
     }
 
-
-    // ========================================
     // DREAM JOB
-    // ========================================
-
     if (
         q.includes("dream job") ||
         q.includes("dream career") ||
         q.includes("what job does noel want") ||
         q.includes("what does noel want to become") ||
-        q.includes("it support")
+        q.includes("it support") ||
+        q.includes("systems administrator") ||
+        q.includes("system administrator")
     ) {
-
         return noelKnowledge.dreamJob;
-
     }
 
-
-    // ========================================
     // INTERNSHIP GOALS
-    // ========================================
-
     if (
         q.includes("internship goal") ||
         q.includes("internship") ||
         q.includes("ojt") ||
         q.includes("500 hour") ||
         q.includes("500-hour") ||
-        q.includes("career objective")
+        q.includes("career objective") ||
+        q.includes("on-the-job training")
     ) {
-
         return noelKnowledge.internship;
-
     }
 
-
-    // ========================================
     // CONTACT INFORMATION
-    // ========================================
-
     if (
         q.includes("contact") ||
+        q.includes("contact information") ||
         q.includes("phone") ||
+        q.includes("phone number") ||
         q.includes("number") ||
+        q.includes("email") ||
+        q.includes("email address") ||
         q.includes("facebook") ||
+        q.includes("location") ||
+        q.includes("address") ||
         q.includes("how can i contact") ||
         q.includes("how do i contact") ||
         q.includes("reach noel")
     ) {
-
         return noelKnowledge.contact;
-
     }
 
-
-    // ========================================
     // DEFAULT RESPONSE
-    // ========================================
-
     return `I'm sorry, I don't have a specific answer for that yet. 😊
 
 Try asking me:
 
+• Tell me about Noel.
+• Where does Noel study?
+• What is Noel's course?
+• What are Noel's skills?
+• What is Noel's experience?
+• What are Noel's achievements?
+• What certifications does Noel have?
+• What are Noel's projects?
 • What are Noel's hobbies?
-• What are his interests?
-• What are his strengths?
-• What is his favorite subject?
-• What is his dream job?
-• What are his weaknesses?
-• Where did Noel study?
-• What are his skills?
-• What are his achievements?
-• What are his internship goals?`;
-
+• What are Noel's interests?
+• What are Noel's strengths?
+• What are Noel's weaknesses?
+• What is Noel's dream job?
+• What are Noel's internship goals?
+• How can I contact Noel?`;
 }
-
+        
 /* SEND MESSAGE */
 
 function sendMessage() {
