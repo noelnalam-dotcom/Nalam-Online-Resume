@@ -1130,7 +1130,8 @@ closeChatbot.addEventListener("click", function () {
 
 const noelKnowledge = {
 
-    about: `Noel Ibrahim C. Nalam is a dedicated 4th-year Bachelor of Science in Information Technology (BSIT) student from Philippine Christian University. He is interested in IT support, system administration, troubleshooting, software maintenance, and web development.`,
+    about: `Noel Ibrahim C. Nalam is a dedicated 4th-year Bachelor of Science in Information Technology (BSIT) student from Philippine Christian University.`,
+
 
     education: `🎓 EDUCATION
 
@@ -1138,9 +1139,12 @@ Philippine Christian University (PCU)
 
 Bachelor of Science in Information Technology (BSIT)
 
-Current Status: 4th Year Student
+Current Status:
+4th Year Student
 
-Expected Graduation: 2nd Semester, SY 2026–2027.`,
+Expected Graduation:
+2nd Semester, SY 2026–2027`,
+
 
     skills: `💻 TECHNICAL SKILLS
 
@@ -1156,28 +1160,29 @@ Operating Systems:
 • Windows 10/11
 • Android
 
-Applications:
+Applications & Tools:
 • Microsoft Word
 • Microsoft Excel
 • Microsoft PowerPoint
 • Google Docs`,
 
-    experience: `🛠 EXPERIENCE
+
+    experience: `🛠 TECHNICAL EXPERIENCE
 
 Software Maintenance & System Administration Labs:
 
 • Configured user roles and permissions.
-• Managed user accounts in a simulated Windows Server environment.
+• Managed accounts in a simulated Windows Server environment.
 • Executed system recovery protocols.
-• Restored operating system functionality after simulated software crashes.
-• Managed OS updates and software patches.
+• Restored OS functionality after simulated software crashes.
+• Managed operating system updates and software patches.
 
-Academic Research & Documentation:
+Academic Research & Technical Documentation:
 
 • Co-authored research reports.
 • Edited technical documentation.
-• Organized data for IT projects.
-• Reviewed documents for consistency and errors.`,
+• Organized data for IT projects.`,
+
 
     achievements: `🏆 ACHIEVEMENTS
 
@@ -1187,9 +1192,17 @@ Academic Research & Documentation:
 
 • Achieved a General Weighted Average (GWA) of 1.35`,
 
-    projects: `📂 NOEL'S PROJECTS
 
-Noel's portfolio currently includes:
+    certifications: `📜 CERTIFICATIONS & AFFILIATIONS
+
+• Certified National Member – Junior Philippine Computer Society (JPCS)
+
+Noel is also a Dean's Lister during his 2nd Year with a General Weighted Average (GWA) of 1.35.`,
+
+
+    projects: `📂 PROJECTS
+
+Noel's portfolio includes:
 
 • Simple Calculator
 • Catch the Ball Game
@@ -1197,13 +1210,20 @@ Noel's portfolio currently includes:
 
 He has also worked on academic projects involving system administration, software maintenance, and technical documentation.`,
 
-    internship: `💼 INTERNSHIP GOAL
+
+    internship: `💼 INTERNSHIP GOALS
 
 Noel is seeking a 500-hour IT or Technical Support Internship.
 
-He wants to apply his skills in operating system administration, software configuration, backup and restoration, and technical troubleshooting.`
-};
+He wants to apply his knowledge and practical skills in:
 
+• Operating System Administration
+• Software Configuration
+• System Backup and Restoration
+• Technical Troubleshooting
+
+His goal is to gain real-world IT industry experience while contributing effectively to an IT team.`
+};
 
 /* ADD MESSAGE */
 
@@ -1226,12 +1246,20 @@ function addMessage(message, sender) {
 
 function getBotResponse(question) {
 
-    const q = question.toLowerCase();
+    const q = question.toLowerCase().trim();
 
+
+    // ========================================
+    // GREETING
+    // ========================================
 
     if (
-        q.includes("hello") ||
-        q.includes("hi") ||
+        q === "hi" ||
+        q === "hello" ||
+        q === "hey" ||
+        q === "good morning" ||
+        q === "good afternoon" ||
+        q === "good evening" ||
         q.includes("who are you")
     ) {
 
@@ -1244,15 +1272,21 @@ You can ask me about Noel's:
 • Experience
 • Projects
 • Achievements
+• Certifications
 • Internship goals`;
 
     }
 
 
+    // ========================================
+    // ABOUT NOEL
+    // ========================================
+
     if (
-        q.includes("about") ||
+        q.includes("about noel") ||
         q.includes("who is noel") ||
-        q.includes("tell me about noel")
+        q.includes("tell me about noel") ||
+        q.includes("introduce noel")
     ) {
 
         return noelKnowledge.about;
@@ -1260,12 +1294,20 @@ You can ask me about Noel's:
     }
 
 
+    // ========================================
+    // EDUCATION
+    // ========================================
+
     if (
         q.includes("education") ||
+        q.includes("where did noel study") ||
+        q.includes("where does noel study") ||
+        q.includes("where did he study") ||
         q.includes("school") ||
         q.includes("university") ||
         q.includes("college") ||
-        q.includes("bsit")
+        q.includes("bsit") ||
+        q.includes("degree")
     ) {
 
         return noelKnowledge.education;
@@ -1273,10 +1315,18 @@ You can ask me about Noel's:
     }
 
 
+    // ========================================
+    // SKILLS
+    // ========================================
+
     if (
         q.includes("skill") ||
+        q.includes("skills") ||
+        q.includes("what are his skills") ||
+        q.includes("what are noel's skills") ||
         q.includes("technology") ||
-        q.includes("tools")
+        q.includes("tools") ||
+        q.includes("technical skills")
     ) {
 
         return noelKnowledge.skills;
@@ -1284,10 +1334,16 @@ You can ask me about Noel's:
     }
 
 
+    // ========================================
+    // EXPERIENCE
+    // ========================================
+
     if (
         q.includes("experience") ||
-        q.includes("background") ||
-        q.includes("work")
+        q.includes("what experience") ||
+        q.includes("work experience") ||
+        q.includes("technical experience") ||
+        q.includes("background")
     ) {
 
         return noelKnowledge.experience;
@@ -1295,12 +1351,21 @@ You can ask me about Noel's:
     }
 
 
+    // ========================================
+    // ACHIEVEMENTS
+    // ========================================
+
     if (
+        q === "achievements" ||
         q.includes("achievement") ||
+        q.includes("achievements") ||
+        q.includes("what are his achievements") ||
+        q.includes("what are noel's achievements") ||
         q.includes("award") ||
-        q.includes("dean") ||
-        q.includes("certification") ||
-        q.includes("jpcs")
+        q.includes("awards") ||
+        q.includes("dean's lister") ||
+        q.includes("deans lister") ||
+        q.includes("gwa")
     ) {
 
         return noelKnowledge.achievements;
@@ -1308,11 +1373,37 @@ You can ask me about Noel's:
     }
 
 
+    // ========================================
+    // CERTIFICATIONS
+    // ========================================
+
+    if (
+        q.includes("certification") ||
+        q.includes("certifications") ||
+        q.includes("certificate") ||
+        q.includes("certificates") ||
+        q.includes("jpcs") ||
+        q.includes("certified")
+    ) {
+
+        return noelKnowledge.certifications || noelKnowledge.achievements;
+
+    }
+
+
+    // ========================================
+    // PROJECTS
+    // ========================================
+
     if (
         q.includes("project") ||
+        q.includes("projects") ||
+        q.includes("what projects") ||
         q.includes("calculator") ||
         q.includes("game") ||
-        q.includes("todo")
+        q.includes("catch the ball") ||
+        q.includes("todo") ||
+        q.includes("to-do")
     ) {
 
         return noelKnowledge.projects;
@@ -1320,11 +1411,20 @@ You can ask me about Noel's:
     }
 
 
+    // ========================================
+    // INTERNSHIP GOALS
+    // ========================================
+
     if (
+        q === "internship goals" ||
+        q === "internship goal" ||
+        q.includes("internship goal") ||
         q.includes("internship") ||
         q.includes("ojt") ||
-        q.includes("career") ||
-        q.includes("goal")
+        q.includes("500 hour") ||
+        q.includes("500-hour") ||
+        q.includes("career goal") ||
+        q.includes("career objective")
     ) {
 
         return noelKnowledge.internship;
@@ -1332,18 +1432,40 @@ You can ask me about Noel's:
     }
 
 
-    return `I can help you learn about Noel. 😊
+    // ========================================
+    // CAREER
+    // ========================================
 
-Try asking:
+    if (
+        q.includes("career") ||
+        q.includes("job") ||
+        q.includes("looking for work") ||
+        q.includes("looking for a job")
+    ) {
 
-• What are Noel's skills?
-• What experience does Noel have?
+        return noelKnowledge.internship;
+
+    }
+
+
+    // ========================================
+    // DEFAULT RESPONSE
+    // ========================================
+
+    return `I'm sorry, I don't have a specific answer for that yet. 😊
+
+Try asking me:
+
+• Tell me about Noel
+• What are his skills?
+• What experience does he have?
 • Where did Noel study?
-• What are Noel's achievements?
-• What projects has Noel created?`;
+• What are his achievements?
+• What certifications does he have?
+• What projects has he created?
+• Internship goals`;
 
 }
-
 
 /* SEND MESSAGE */
 
